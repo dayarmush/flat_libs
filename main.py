@@ -1,9 +1,7 @@
 import importlib; import sys; import os; import time
-from classes.story import Story, Base
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from classes.story import Story, Base, engine, session
 
-story_num = input('choose story:')
+story_num = input("\033[1;38;5;63m" + 'Select a Story:' + "\033[0m")
 
 if story_num == 'q':
     exit()
@@ -14,22 +12,18 @@ sys.path.append(stories_path)
 story_module = importlib.import_module(f'story{story_num}')
 mad_lib_function = getattr(story_module, 'mad_lib')
 
-
-engine = create_engine('sqlite:///stories.db')
 Base.metadata.create_all(engine)
-Session = sessionmaker(bind = engine)
-session = Session()
 
 story = mad_lib_function()
 
 # time.sleep(10)
 
-title = input('input title:')
+title = input("\033[1;38;5;63m" + 'input title:' + "\033[0m")
 if title == 'q':
     exit()
 
 os.system('clear')
-another_story = input('Would you like another story [Y/N]:')
+another_story = input("\033[1;38;5;63m" + 'Would you like another story? [Y/N]:' + "\033[0m")
 
 title = Story(title=title, story=story)
 
@@ -43,5 +37,9 @@ if another_story == 'y':
 else:
     exit()
 
+# Stories: funny story, sad story, horror story, romance story, stupid story
+# Laughing ascii
+# Add color
+# Center text
 
 
