@@ -1,22 +1,20 @@
+from sqlalchemy.orm import declarative_base
+from sqlalchemy import Column, Integer, String
 
-# name = input('put in a name:')
-story_read = input('choose story:')
+Base = declarative_base()
 
-print(story_read)
-
-
-class Story:
+class Story(Base):
     
-    def __init__(self, story):
-        self.story = story
+    __tablename__ = 'stories'
+
+    id = Column(Integer(), primary_key = True)
+    title = Column(String())
+    story = Column(String())
 
     def __repr__(self) -> str:
-        return f'<Story {self.story}>'
+        return f'<Story {self.title}: {self.story}>'
         
-        
-        
-
 
 if __name__ == '__main__':
-    mike = Story(story_read)
-    print(mike)
+    pass
+    
