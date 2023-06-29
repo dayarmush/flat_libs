@@ -1,25 +1,46 @@
 import os
 
 def mad_lib():
-    
-    os.system('clear')
+        
+        os.system('clear')
 
-    adjective= input("enter an adjective  : ")
-    noun= input("enter a noun : ")
-    name= input("enter a name : ")
-    animal= input("enter an animal : ")
-    adjective= input("enter an adjective  : ")
-    place= input("enter a place  : ")
-    verb= input("enter a verb  : ")
-    noun= input("enter a plural noun  : ")
-    noun= input("enter a noun : ")
+        adjective = input("\033[92mEnter an adjective: \033[0m")
+        if adjective.lower() == 'q':
+            exit()
+
+        name1 = input("\033[92mEnter a name: \033[0m")
+        if name1.lower() == 'q':
+            exit()
+
+        animal = input("\033[92mEnter an animal: \033[0m")
+        if animal.lower() == 'q':
+            exit()
+
+        name2 = input("\033[92mEnter a name: \033[0m")
+        if name2.lower() == 'q':
+            exit()
+
+        place = input("\033[92mEnter a place: \033[0m")
+        if place.lower() == 'q':
+            exit()
+
+        verb = input("\033[92mEnter a verb: \033[0m")
+        if verb.lower() == 'q':
+            exit()
+
+        noun1 = input("\033[92mEnter a plural noun: \033[0m")
+        if noun1.lower() == 'q':
+            exit()
+
+        noun2 = input("\033[92mEnter a noun: \033[0m")
+        if noun2.lower() == 'q':
+            exit()
+
+        os.system('clear')
+
+        story = " \033[92mIn a " + adjective + " world, a man named " + name1 + " teamed up with a " + animal + " named " + name2 + " for a hilarious comedy tour. \n Their witty banter and funny tales left audiences in stitches everywhere they performed. \n From bustling cafes to " + place + ", they brought laughter to people's lives.\n Their jokes about " + verb + " " + noun1 + " became legendary, making them the talk of the town.\n Through humor, they bridged gaps and united people from diverse backgrounds.\n Together, they proved that laughter truly is the best " + noun2 + ".\033[0m \n\n"
+
+        print(story)
 
 
-    os.system('clear')
 
-    story = " In a "+ adjective +"  world, a "+ noun +" named "+ name +" teamed up with a " + animal + " named "+ adjective +" for a hilarious comedy tour. Their witty banter and funny tales left audiences in stitches everywhere they performed. From bustling cafes to "+ place +", they brought laughter to people's lives. Their jokes about "+ verb +" "+ noun +" became legendary, making them the talk of the town. Through humor, they bridged gaps and united people from diverse backgrounds. Together, they proved that laughter truly is the best "+ noun +". "
-
-    text = 'say, ' + animals + 'the photographer said as the camera flashed! \nand I had gone to to get our photos taken on my birthday. \nThe first photo we really wanted was a picture of us dressed as pretending to be a. \nwhen we saw the second photo, it was exactly what I wanted. \nWe both looked like wearing and --exactly what I had in mind'
-
-    print(text)
-    return text
