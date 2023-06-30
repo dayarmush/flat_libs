@@ -8,6 +8,7 @@ engine = create_engine('sqlite:///stories.db')
 Session = sessionmaker(bind = engine)
 session = Session()
 
+
 class Story(Base):
 
     @classmethod
@@ -38,4 +39,4 @@ class Story(Base):
     def __repr__(self) -> str:
         return f'<Story {self.title}: {self.story}>'
         
-    
+session.query(Story).delete()
